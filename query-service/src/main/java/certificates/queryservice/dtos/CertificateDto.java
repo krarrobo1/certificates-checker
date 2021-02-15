@@ -12,5 +12,6 @@ import lombok.Setter;
 public class CertificateDto {
     private String studentName;
     private String issuerName;
+    private String courseTitle;
     private Double totalHours;
 }

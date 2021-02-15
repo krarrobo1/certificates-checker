@@ -25,6 +25,8 @@ public class Course extends Auditable {
     private Long id;
     @Column(name = "institution_name")
     private String institutionName;
+    @Column(name = "title")
+    private String title;
     @Column(name = "duration")
     private Double duration;
     

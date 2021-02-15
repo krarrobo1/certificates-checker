@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-QueryServiceApplication<query-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "certificates.queryservice.QueryServiceApplication",
+            "projectName": "query-service",
+            "args": ""
+        }
+    ]
+}

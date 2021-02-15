@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Setter(AccessLevel.PUBLIC)
 @Getter(AccessLevel.PUBLIC)
 @Entity
-@Table(name = "courses")
+@Table(name = "certificates")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Certificate extends Auditable{
