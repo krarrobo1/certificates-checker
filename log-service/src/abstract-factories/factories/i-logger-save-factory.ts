@@ -9,5 +9,5 @@ export abstract class ILoggerSaveFactory<T = ILogDto> {
      * Save log
      * @param payload log data to store
      */
-    public abstract Save(payload: T): Promise<string>;
+    public abstract save(payload: T): Promise<string>;
 }

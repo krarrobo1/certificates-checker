@@ -3,7 +3,7 @@ import { ILogDto } from "../../interfaces/i-log-dto";
 /**
  * Footprint to get a log event
  */
-export abstract class ILoggerGetFactory<T = ILogDto, U = {}> {
+export abstract class ILoggerGetFactory<T = ILogDto, U = { id: string }> {
 
     /**
      * Function to get one log from registry
