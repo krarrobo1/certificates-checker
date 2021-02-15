@@ -1,6 +1,8 @@
-import { DatabaseLoggerFactory, FileLoggerFactory, ILoggerAbstractFactory } from "./abstract-factories";
+import { DatabaseLoggerFactory } from "./abstract-factories/database-logger-abstract-factory";
+import { FileLoggerFactory } from "./abstract-factories/file-logger-abstract-factory";
+import { ILoggerAbstractFactory } from "./abstract-factories/i-logger-abstract-factory";
 
-const useDatabase = true;
+const useDatabase = false;
 
 export class Logger {
 
