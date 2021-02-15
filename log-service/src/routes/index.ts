@@ -12,6 +12,7 @@ routing.get('/:id', async (req, res) => {
         const content = await getter.get({ id });
         res.json(content);
     } catch (error) {
+        console.log(error);
         res.status(404).send(`Log ${id} not found`);
     }
 });
@@ -24,6 +25,7 @@ routing.post('/', async (req, res) => {
         const content = await saver.save(body);
         res.json(content);
     } catch (error) {
+        console.log(error);
         res.status(500).send(`couldn't save log`);
     }
 });
