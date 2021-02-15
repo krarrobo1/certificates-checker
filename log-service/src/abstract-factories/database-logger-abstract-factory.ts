@@ -1,12 +1,16 @@
-import { ILogDto, ILoggerAbstractFactory, ILoggerGetFactory, ILoggerSaveFactory } from "../interfaces";
+import { ILoggerAbstractFactory, ILoggerGetFactory, ILoggerSaveFactory } from ".";
+import { ILogDto } from "../interfaces";
+import { DatabaseLoggerGetFactory } from "./get/database-logger-get-factory";
+import { DatabaseLoggerSaveFactory } from "./save/database-logger-save-factory";
 
 export class DatabaseLoggerFactory extends ILoggerAbstractFactory {
 
-    public save(): ILoggerSaveFactory<ILogDto> {
-        throw new Error("Method not implemented.");
-    }
-    public get(): ILoggerGetFactory<ILogDto, {}> {
-        throw new Error("Method not implemented.");
-    }
+    constructor() { super(); }
 
+    public saver(): ILoggerSaveFactory<ILogDto> {
+        return new DatabaseLoggerSaveFactory();
+    }
+    public getter(): ILoggerGetFactory<ILogDto, {}> {
+        return new DatabaseLoggerGetFactory();
+    }
 }

@@ -1,5 +1,4 @@
-import { DatabaseLoggerFactory, FileLoggerFactory } from "./abstract-factories";
-import { ILoggerAbstractFactory } from "./interfaces";
+import { DatabaseLoggerFactory, FileLoggerFactory, ILoggerAbstractFactory } from "./abstract-factories";
 
 const useDatabase = true;
 
@@ -10,7 +9,7 @@ export class Logger {
 
     private constructor() { }
 
-    get instance(): ILoggerAbstractFactory {
+    public static get instance(): ILoggerAbstractFactory {
         if (!Logger._instance)
             Logger._instance = useDatabase
                 ? new DatabaseLoggerFactory()

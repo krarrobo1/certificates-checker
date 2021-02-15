@@ -6,6 +6,7 @@ import { ILoggerSaveFactory } from "./factories/i-logger-save-factory";
  * Abstract factory to create a family of loggers
  */
 export abstract class ILoggerAbstractFactory<T = ILogDto> {
-    public abstract save(): ILoggerSaveFactory<T>;
-    public abstract get(): ILoggerGetFactory<T>;
+
+    public abstract saver(): ILoggerSaveFactory<T>;
+    public abstract getter(): ILoggerGetFactory<T>;
 }
