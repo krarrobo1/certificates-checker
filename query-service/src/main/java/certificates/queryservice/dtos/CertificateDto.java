@@ -14,4 +14,6 @@ public class CertificateDto {
     private String issuerName;
     private String courseTitle;
     private Double totalHours;
+    private String resId;
+
 }

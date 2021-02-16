@@ -46,6 +46,7 @@ public class CertificateController {
         
         QueryDto queryDto = new QueryDto();
         queryDto.setHost(clientIp);
+        queryDto.setVerificationID(code);
         queryDto.setUserAgent(userAgent);
 
         CertificateDto response = certificateService.isValid(code, queryDto); 

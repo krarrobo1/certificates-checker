@@ -36,18 +36,16 @@ public class ValidateCertificateImpl implements IValidateCertificate {
 
         if (Objects.isNull(certificate)) {
             queryDto.setIsValid(false);
-            // send the query log 
-            LogRequest.sendToLogService(queryDto);
-            throw new InvalidCertificateException("Invalid certificate !");
+            String res = LogRequest.sendToLogService(queryDto);
+            throw new InvalidCertificateException("Invalid certificate ! resId: " + res);
         } else {
             String studentName = certificate.getStudent().getFirstName() + " " + certificate.getStudent().getLastName();
             String issuerName = certificate.getCourse().getInstitutionName();
             String courseTitle = certificate.getCourse().getTitle();
             Double totalHours = certificate.getCourse().getDuration();
-            certificateDto = new CertificateDto(studentName, issuerName, courseTitle, totalHours);
             queryDto.setIsValid(true);
-            // send the query log 
-            LogRequest.sendToLogService(queryDto);
+            String res = LogRequest.sendToLogService(queryDto);
+            certificateDto = new CertificateDto(studentName, issuerName, courseTitle, totalHours, res);
         }
       
         return certificateDto;

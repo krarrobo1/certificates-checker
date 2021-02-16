@@ -10,17 +10,21 @@ import org.springframework.web.client.RestTemplate;
 import certificates.queryservice.dtos.QueryDto;
 
 public class LogRequest {
-    public static void sendToLogService(QueryDto queryDto) {
+    public static String sendToLogService(QueryDto queryDto) {
         RestTemplate restTemplate = new RestTemplate();
 
-        final String baseUrl = "http://localhost:" + "3000" + "/logger";
+        // final String baseUrl = "http://localhost:" + "3000" + "/logger";
+        final String baseUrl = "http://log-service/logger";
+
         URI uri;
+        String resultStr = "";
         try {
             uri = new URI(baseUrl);
             ResponseEntity<String> result = restTemplate.postForEntity(uri, queryDto, String.class);
-            System.out.println(result.getStatusCode());
+            resultStr = result.getBody();
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        return resultStr;
     }
 }

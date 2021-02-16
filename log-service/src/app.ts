@@ -7,6 +7,7 @@ const port = 3000;
 
 // plugins
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // routing
 app.get('/', (_, res) => res.send('hello World from logger'));
